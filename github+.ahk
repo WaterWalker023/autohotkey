@@ -10,5 +10,5 @@ send {esc}
 Run, C:\Windows\System32\cmd.exe
 Sleep, 100
 Send, git add . `ngit commit -m "%Clipboard%" `ngit push`ngit status`n
-send exit{Enter}
+send exit
 return
