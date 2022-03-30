@@ -2,4 +2,4 @@
 SendMode Input
 SetWorkingDir, %A_ScriptDir%
 
-Shutdown, 1
+>+<#Delete::Shutdown, 0
