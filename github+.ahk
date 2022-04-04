@@ -9,6 +9,10 @@ send ^{a}
 send ^{c}
 send cmd{Enter}
 Sleep, 1000
-Send, git add . `ngit commit -m "%Clipboard%" `ngit push`ngit status`n
+Send, git add . `ngit commit -m " %Clipboard%" `ngit push`ngit status`n
 send exit
 return
+
+::updatetm::
+Send, update %A_YYYY%%A_MM%%A_DD%%A_Hour%%A_min%
+Return
