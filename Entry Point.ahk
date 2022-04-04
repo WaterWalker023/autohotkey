@@ -8,6 +8,7 @@ CapsLock::b
 RCtrl::Tab
 XButton1::1
 XButton2::v
+LAlt::4
 
 >^e::
 Sleep, 100
