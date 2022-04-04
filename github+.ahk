@@ -4,6 +4,8 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
+::updategit+::
+Send, update %A_YYYY%%A_MM%%A_DD%%A_Hour%%A_min%
 ::git+::
 send ^{a}
 send ^{c}
@@ -13,6 +15,4 @@ Send, git add . `ngit commit -m " %Clipboard%" `ngit push`ngit status`n
 send exit
 return
 
-::updatetm::
-Send, update %A_YYYY%%A_MM%%A_DD%%A_Hour%%A_min%
-Return
+
