@@ -6,8 +6,4 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 LControl::c
 CapsLock::BackSpace
 RCtrl::Tab
-
-
-
-
-
+LAlt::4
