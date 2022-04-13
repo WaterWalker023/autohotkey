@@ -7,7 +7,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 Default = !{tab}
 caps = 1
 capson = `ncapslockto
-::rlw::Donaudampfschiffahrtselektrizitätenhauptbetriebswerkbauunterbeamtengesellschaft
+
 
 
 l = %Default%
@@ -15,6 +15,10 @@ l = %Default%
 $*CapsLock:: 
 OutputDebug, pressed CapsLock wat %l% aanstuurde
 send %l%
+Return
+::rlw::Donaudampfschiffahrtselektrizitätenhauptbetriebswerkbauunterbeamtengesellschaft
+::rlgonk::
+SendRaw Gonk, gonk! Gonk! GONK. Gonk Gonk! GONK. GONK. GONK. Gonk, gonk, gonk! GONK. GONK. Gonk! GONK. Gonk! GONK. Gonk! GONK. Gonk! Gonk! -GNK
 Return
 
 >!capslock::
