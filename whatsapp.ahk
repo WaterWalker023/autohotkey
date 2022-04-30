@@ -2,4 +2,4 @@
 SendMode Input
 SetWorkingDir, %A_ScriptDir%
 
->+<#Delete::Shutdown, 5
+Run, https://web.whatsapp.com/

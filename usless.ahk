@@ -2,4 +2,6 @@
 SendMode Input
 SetWorkingDir, %A_ScriptDir%
 
->+<#Delete::Shutdown, 5
+m::
+While, true
+send snuf{Space}

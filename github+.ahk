@@ -4,8 +4,12 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
+
+;#IfWinActive ahk_class Notepad
+#IfWinActive C:\
 ::updategit+::
 Send, update %A_YYYY%%A_MM%%A_DD%%A_Hour%%A_min%
+#IfWinActive C:\
 ::git+::
 send ^{a}
 send ^{c}
