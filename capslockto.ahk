@@ -7,11 +7,11 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 Default = !{tab}
 caps = 1
 capson = `ncapslockto
-
-
-
 l = %Default%
->!Insert::InputBox, l,CapsLock to keys,for shortcuts use + = shift. ^ = Ctrl. ! = Alt. # = Win `nfor Multi letter keys use { }`n, Show, 375, Height, X, Y, Locale, Timeout, %l%
+SetCapsLockState AlwaysOff
+
+
+!Insert::InputBox, l,CapsLock to keys,for shortcuts use + = shift. ^ = Ctrl. ! = Alt. # = Win `nfor Multi letter keys use { }`n, Show, 375, Height, X, Y, Locale, Timeout, %l%
 $*CapsLock:: 
 OutputDebug, pressed CapsLock wat %l% aanstuurde
 send %l%
