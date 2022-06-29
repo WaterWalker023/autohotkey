@@ -2,6 +2,9 @@
 SendMode Input
 SetWorkingDir, %A_ScriptDir%
 
+
+
+#if GetKeyState("NumLock", "T") 
 sit = 0
 Loop{
     If (sit = 1){

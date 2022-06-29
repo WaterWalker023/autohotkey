@@ -2,6 +2,8 @@
 SendMode Input
 SetWorkingDir, %A_ScriptDir%
 
+
+#if GetKeyState("NumLock", "T") 
 Tab::i
 c::m
 z::n

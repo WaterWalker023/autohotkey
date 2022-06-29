@@ -6,7 +6,7 @@ ToolTip, started entry point, 0, 0
 sleep 5000
 ToolTip,
 
-
+#if GetKeyState("NumLock", "T") 
 tab::i
 CapsLock::b
 RCtrl::Tab
@@ -15,6 +15,8 @@ F19::v
 LAlt::4
 MButton::m
 $F7::^+F7
+
+#If (True)
 >^e::
 Sleep, 100
 ExitApp
