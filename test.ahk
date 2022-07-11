@@ -1,24 +1,38 @@
 #SingleInstance, Force
 SendMode Input
 SetWorkingDir, %A_ScriptDir%
+#MaxHotkeysPerInterval 2000
+up = 0
+down = 0
+left = 0
+Right = 0
 
-!#PgDn::
-ChangeResolution(1920, 1080)
+
+WheelUp::
+up++
+ToolTip, up:%up%, X, Y,
+Return
+WheelDown::
+down++
+ToolTip, down:%down%, X, Y,
+Return
+WheelLeft:: 
+left++
+ToolTip, left:%left%, X, Y,
+Return
+WheelRight:: 
+Right++
+ToolTip, Right:%Right%, X, Y,
 Return
 
-!#PgUp::
-ChangeResolution(800, 600)
+q::
+up = 0
+down = 0
+left = 0
+Right = 0
 Return
 
-ChangeResolution(Screen_Width := 3240, Screen_Height := 2160, Color_Depth := 32)
-{
-	VarSetCapacity(Device_Mode,156,0)
-	NumPut(156,Device_Mode,36) 
-	DllCall( "EnumDisplaySettingsA", UInt,0, UInt,-1, UInt,&Device_Mode )
-	NumPut(0x5c0000,Device_Mode,40) 
-	NumPut(Color_Depth,Device_Mode,104)
-	NumPut(Screen_Width,Device_Mode,108)
-	NumPut(Screen_Height,Device_Mode,112)
-	Return DllCall( "ChangeDisplaySettingsA", UInt,&Device_Mode, UInt,0 )
-}
-Return
+
+/*
+
+*/

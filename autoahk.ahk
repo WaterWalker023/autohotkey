@@ -45,7 +45,21 @@ Send, ^v
 Return
 
 #IfWinActive
-^!n::SetNumLockState % !GetKeyState("NumLock", "T") 
+>^n::
+SetNumLockState % !GetKeyState("NumLock", "T") 
+if GetKeyState("NumLock", "T")
+{
+    ToolTip, numlock aan
+    Sleep, 1000
+    tooltip
+}
+Else
+{
+    ToolTip, numlock uit
+    Sleep, 1000
+    tooltip
+}
 
+Return
 ^#M::run https://www.youtube.com/watch?v=H0YDbhBNJfY ;Megalovania
 ^#A::run https://www.youtube.com/watch?v=nf30qQzw7rk&list=PLpW44f0GlyyUXtvITPyHbRZCxS5OZIJFc&index=1 ;subnautica
