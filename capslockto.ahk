@@ -8,6 +8,7 @@ caps = 1
 l = %Default%
 SetCapsLockState AlwaysOff
 
+
 !^Insert::
 !Insert::
 InputBox, l,CapsLock to keys,for shortcuts use + = shift. ^ = Ctrl. ! = Alt. # = Win `nfor Multi letter keys use { }`n, Show, 375, Height, X, Y, Locale, Timeout, %l%
