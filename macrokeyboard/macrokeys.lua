@@ -1,9 +1,8 @@
 clear()
 print('Running')
--- assign logical name to macro keyboard
-lmc_assign_keyboard('MACROS');
---lmc_device_set_name('MACROS','1E1F41A7')
--- define callback for whole device
+--lmc_assign_keyboard('MACROS');
+lmc_device_set_name('MACROS','1E1F41A7')
+
 
 lmc_set_handler('MACROS',function(button, direction)
   if (direction == 1) then return end  -- ignore down
