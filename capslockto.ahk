@@ -3,7 +3,7 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir C:\Users\  ; Ensures a consistent starting directory.
 
-Default = !{Esc}
+Default = !{tab}
 caps = 1
 l = %Default%
 SetCapsLockState AlwaysOff

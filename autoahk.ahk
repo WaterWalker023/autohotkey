@@ -6,20 +6,7 @@ send #g
 sleep 100
 send #g
 
-Loop{
-    sleep 1000
-    IfWinExist, ahk_exe Project64.exe
-    {
-        IfWinNotExist project64.ahk
-            Run, C:\Users\Tomst\OneDrive - Mediacollege Amsterdam\Bureaublad\ahk\project64.ahk
-    }
-    
-    IfWinNotExist, ahk_exe Project64.exe
-    {
-        IfWinExist project64.ahk
-            WinClose project64.ahk
-    }
-}
+
 Return
 ::starttypen::
 IfWinNotExist autocorrection.ahk
@@ -31,7 +18,7 @@ Return
 
 ;rlgonk
     ::rlgonk::
-    SendRaw Gonk, gonk! Gonk! GONK. Gonk Gonk! GONK. GONK. GONK. Gonk, gonk, gonk! GONK. GONK. Gonk! GONK. Gonk! GONK. Gonk! GONK. Gonk! Gonk! -GNK
+    SendRaw Gonk, gonk! Gonk! GONK. Gonk Gonk! GONK. GONK. GONK. Gonk, gonk, gonk! GONK. GONK. Gonk! GONK. Gonk! GONK. Gonk! GONK. Gonk! Gonk! -GONK
     Return
 
 ;Donaudampfschiffahrtselektrizitätenhauptbetriebswerkbauunterbeamtengesellschaft

@@ -16,7 +16,8 @@ Loop
 */
 
 
-F20::
+F20 ::
+OutputDebug, %macro%
 FileRead, macro, macrokeyboard.txt
 if macro = r 
 {
@@ -26,9 +27,15 @@ else if macro = a
 {
     ToolTip, a
 }
+Else if macro := "F1"
+{
+    SetWorkingDir C:\Users\
+    run C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+    SetWorkingDir, %A_ScriptDir%
+}
 else 
 {
     ToolTip, not used
 }
-OutputDebug, %macro%
+
 ;ToolTip, %macro%

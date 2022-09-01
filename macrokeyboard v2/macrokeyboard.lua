@@ -1,7 +1,7 @@
 clear()
 print('Running')
-lmc_assign_keyboard('MACROS');
---lmc_device_set_name('MACROS','1E1F41A7')
+--lmc_assign_keyboard('MACROS');
+lmc_device_set_name('MACROS','1E1F41A7')
 lmc_set_handler('MACROS',function(button, direction)
 local config = {
 	[45]  = "insert",
