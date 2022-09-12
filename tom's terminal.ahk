@@ -3,19 +3,23 @@ SendMode Input
 SetWorkingDir, %A_ScriptDir%
 SetTitleMatchMode, 2
 DetectHiddenWindows, On
+OnExit("ExitFunc")
+Run, C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe,,Show, PID 
+SetKeyDelay 20
 
 AppsKey::
 InputBox, terminalInputBox, , Tom's Terminal,
-IfWinNotExist, ahk_exe powershell.exe,
-    Run, C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe,,Minimize, PID 
-WinWait, ahk_pid %PID%  ; Wait for it to appear.
-ControlSendraw,, %terminalInputBox%, ahk_exe powershell.exe
-ControlSend,, | clip{Enter} , ahk_exe powershell.exe
-Clipboard := "" 
-sleep 100
-;ControlSend,,echo error | clip {Enter} Exit {enter}, ahk_exe powershell.exe
+Process, Exist, %PID%
+If (!ErrorLevel)
+    Run, C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe,,Show, PID 
+WinWait, ahk_pid %PID%
+ControlSendRaw,,%terminalInputBox%, ahk_exe powershell.exe
+ControlSend,, +{\} clip{Enter} , ahk_exe powershell.exe
+Clipboard := ""
+ControlSend,,Start-Sleep -Milliseconds 2000 {Enter}echo error +{\} clip {Enter}, ahk_exe powershell.exe
 ClipWait,
-ToolTip, %clipboard%, 0, 0,
+tooltip, %clipboard%, 0, 0,
+Return
 
 ExitFunc(ExitReason, ExitCode)
 {
@@ -25,3 +29,4 @@ ExitFunc(ExitReason, ExitCode)
         return
     }
 }
+

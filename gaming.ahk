@@ -34,7 +34,7 @@ SetWorkingDir, %A_ScriptDir%
     #If WinActive("ahk_exe RobloxPlayerBeta.exe") && GetKeyState("NumLock", "T")
     AppsKey::
     robloxmenu = Show
-    Gui, Add, ListBox, r4 vrobloxgame, entry point|Jailbreak|Murder Mystery 2|Starscape
+    Gui, Add, ListBox, r5 vrobloxgame, entry point|Jailbreak|Murder Mystery 2|Starscape|Arsenal
     Gui, add, button, gclose, Done 
     Gui, Show
     Return
@@ -95,7 +95,9 @@ SetWorkingDir, %A_ScriptDir%
     Tab::i
     c::m
     z::n
-
+    #If WinActive("ahk_exe RobloxPlayerBeta.exe") && GetKeyState("NumLock", "T") && robloxgame = "Arsenal"
+    F19::q
+    F18::q
 
 ;project64
     #If WinActive("ahk_exe Project64.exe") && GetKeyState("NumLock", "T")
