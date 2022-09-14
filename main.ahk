@@ -2,10 +2,21 @@
 SendMode Input
 SetWorkingDir, %A_ScriptDir%
 
+;scipt start up
+    send #g
+    sleep 100
+    send #g
+    MsgBox, 4, , turn on panicshutdown? `nShift + Win + Delete
+    IfMsgBox, Yes
+    {
+        Run, C:\Users\Tomst\OneDrive - Mediacollege Amsterdam\Bureaublad\ahk\Shutdown.ahk
+    }
+Return
 
+;Always
 
 ;changeresolution
-+^F12::
+    +^F12::
     If (changeresolutionres = 1){
     ChangeResolution(1920, 1080)
     changeresolutionres = 0
@@ -25,7 +36,31 @@ SetWorkingDir, %A_ScriptDir%
         NumPut(Screen_Height,Device_Mode,112)
         Return DllCall( "ChangeDisplaySettingsA", UInt,&Device_Mode, UInt,0 )
     }
-    Return
+Return
+
+;school
+    $!f4::Run, C:\Users\Tomst\OneDrive - Mediacollege Amsterdam\Bureaublad\ahk\sounds\Rick Astley - Never Gonna Give You Up (Official Music Video).mp4
+    $!F5::!f4
+Return
+
+;numlock hotkey (>^n)
+    >^n::
+    SetNumLockState % !GetKeyState("NumLock", "T") 
+    if GetKeyState("NumLock", "T")
+    {
+        ToolTip, numlock aan
+        Sleep, 1000
+        tooltip
+    }
+    Else
+    {
+        ToolTip, numlock uit
+        Sleep, 1000
+        tooltip
+    }
+Return
+
+;program specific
 
 ;roblox
     #If WinActive("ahk_exe Autohotkey.exe") && GetKeyState("NumLock", "T") && robloxmenu = "Show"
@@ -98,6 +133,7 @@ SetWorkingDir, %A_ScriptDir%
     #If WinActive("ahk_exe RobloxPlayerBeta.exe") && GetKeyState("NumLock", "T") && robloxgame = "Arsenal"
     F19::q
     F18::q
+Return
 
 ;project64
     #If WinActive("ahk_exe Project64.exe") && GetKeyState("NumLock", "T")
@@ -110,6 +146,14 @@ SetWorkingDir, %A_ScriptDir%
     Send, {%key% up}
     sleep 100
     }
+Return
+
+;Visual Studio
+    #IfWinActive ahk_exe devenv.exe
+    ::!!!::
+    Clipboard = using System;`nusing System.Collections.Generic;`nusing System.IO;`n`nnamespace Files`n{`n`tinternal class Program`n`t{`n`t`tstatic void Main(string[] args)`n`t`t{`n`n`t`t}`n`t}`n}
+    Send, ^v
+Return
 
 ;ExitFunc
     ExitFunc(ExitReason, ExitCode)
