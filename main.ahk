@@ -16,6 +16,16 @@ Return
 ;Always
 
 ;changeresolution
+    +^!F12::
+    If (changeresolutionres = 1){
+    ChangeResolution(1920, 1200)
+    changeresolutionres = 0
+    }
+    Else{
+    ChangeResolution(800, 600)
+    changeresolutionres = 1
+    }
+    Return
     +^F12::
     If (changeresolutionres = 1){
     ChangeResolution(1920, 1080)
@@ -25,6 +35,7 @@ Return
     ChangeResolution(800, 600)
     changeresolutionres = 1
     }
+    Return
     ChangeResolution(Screen_Width := 3240, Screen_Height := 2160, Color_Depth := 32)
     {
         VarSetCapacity(Device_Mode,156,0)
@@ -43,7 +54,7 @@ Return
     $!F5::!f4
 Return
 
-;numlock hotkey (>^n)
+;normal hotkeys
     >^n::
     SetNumLockState % !GetKeyState("NumLock", "T") 
     if GetKeyState("NumLock", "T")
@@ -58,6 +69,9 @@ Return
         Sleep, 1000
         tooltip
     }
+    ::updatenuber::
+    Send, %A_YYYY%%A_MM%%A_DD%%A_Hour%%A_min%%A_Sec%
+    Return
 Return
 
 ;program specific
@@ -95,6 +109,7 @@ Return
     $F7::^+F7
     t::h
     y::j
+    ~`::Send, 67
 
     #If WinActive("ahk_exe RobloxPlayerBeta.exe") && GetKeyState("NumLock", "T") && robloxgame = "Jailbreak"
     LControl::c
@@ -153,6 +168,10 @@ Return
     ::!!!::
     Clipboard = using System;`nusing System.Collections.Generic;`nusing System.IO;`n`nnamespace Files`n{`n`tinternal class Program`n`t{`n`t`tstatic void Main(string[] args)`n`t`t{`n`n`t`t}`n`t}`n}
     Send, ^v
+    Return
+    ::[SF]::
+    Send, [SerializeField]
+    return
 Return
 
 ;ExitFunc
