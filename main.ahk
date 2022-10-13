@@ -5,7 +5,7 @@ SetWorkingDir, %A_ScriptDir%
 ;scipt start up
     send #g
     sleep 100
-    send #g
+    send {Esc}
     MsgBox, 4, , turn on panicshutdown? `nShift + Win + Delete
     IfMsgBox, Yes
     {
