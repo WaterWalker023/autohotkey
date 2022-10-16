@@ -4,38 +4,58 @@ SetWorkingDir, %A_ScriptDir%
 
 ;scipt start up
     send #g
-    sleep 100
+    sleep 1000
     send {Esc}
     MsgBox, 4, , turn on panicshutdown? `nShift + Win + Delete
     IfMsgBox, Yes
     {
         Run, C:\Users\Tomst\OneDrive - Mediacollege Amsterdam\Bureaublad\ahk\Shutdown.ahk
     }
+    if (A_ScreenHeight = 1080)
+    {
+        home = 1
+        MsgBox, test %home%
+    }
+        if (A_ScreenHeight = 1200)
+    {
+        home = 0
+        MsgBox, test %home%
+
+    }
 Return
 
 ;Always
 
 ;changeresolution
-    +^!F12::
-    If (changeresolutionres = 1){
-    ChangeResolution(1920, 1200)
-    changeresolutionres = 0
-    }
-    Else{
-    ChangeResolution(800, 600)
-    changeresolutionres = 1
-    }
-    Return
     +^F12::
-    If (changeresolutionres = 1){
-    ChangeResolution(1920, 1080)
-    changeresolutionres = 0
+    MsgBox, %A_ScreenWidth%
+    If (home = 1)
+    {
+        MsgBox, 1 %home%
+        If (changeresolutionres = 1){
+        ChangeResolution(1920, 1080)
+        changeresolutionres = 0
+        }
+        Else{
+        ChangeResolution(800, 600)
+        changeresolutionres = 1
+        }
+        Return
     }
-    Else{
-    ChangeResolution(800, 600)
-    changeresolutionres = 1
+    If (home = 0)
+    {
+        MsgBox, 0
+        If (changeresolutionres = 1){
+        ChangeResolution(1920, 1200)
+        changeresolutionres = 0
+        }
+        Else{
+        ChangeResolution(800, 600)
+        changeresolutionres = 1
+        }
+        Return
     }
-    Return
+    MsgBox, done
     ChangeResolution(Screen_Width := 3240, Screen_Height := 2160, Color_Depth := 32)
     {
         VarSetCapacity(Device_Mode,156,0)
