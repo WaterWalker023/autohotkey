@@ -14,13 +14,10 @@ SetWorkingDir, %A_ScriptDir%
     if (A_ScreenHeight = 1080)
     {
         home = 1
-        MsgBox, test %home%
     }
         if (A_ScreenHeight = 1200)
     {
         home = 0
-        MsgBox, test %home%
-
     }
 Return
 
@@ -28,10 +25,8 @@ Return
 
 ;changeresolution
     +^F12::
-    MsgBox, %A_ScreenWidth%
     If (home = 1)
     {
-        MsgBox, 1 %home%
         If (changeresolutionres = 1){
         ChangeResolution(1920, 1080)
         changeresolutionres = 0
@@ -44,7 +39,6 @@ Return
     }
     If (home = 0)
     {
-        MsgBox, 0
         If (changeresolutionres = 1){
         ChangeResolution(1920, 1200)
         changeresolutionres = 0
@@ -55,7 +49,6 @@ Return
         }
         Return
     }
-    MsgBox, done
     ChangeResolution(Screen_Width := 3240, Screen_Height := 2160, Color_Depth := 32)
     {
         VarSetCapacity(Device_Mode,156,0)
@@ -204,3 +197,4 @@ Return
             return
         }
     }
+Return
