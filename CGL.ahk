@@ -5,7 +5,7 @@ SetBatchLines, -1
 SetWorkingDir, %A_ScriptDir%
 
 Gui, Add, TreeView, vMyTree W790 H550 ImageList%ImageListID% Background1E1E1E cC0C0C0 
-Loop Files, T:\ROM\*, R
+Loop Files, D:\ROM\*, R
 {
     StringReplace, Loopfilename, A_LoopFileName, .%A_LoopFileExt%, , All
     If (Loopfilename != "CGL")
@@ -22,7 +22,7 @@ return
 
 close:
 TV_GetText(selectedgame, TV_GetSelection())
-Loop Files, T:\ROM\*, R
+Loop Files, D:\ROM\*, R
 {
     StringReplace, games, A_LoopFileName, .%A_LoopFileExt%, , All
     if(selectedgame = games)
