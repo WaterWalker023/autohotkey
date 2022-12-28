@@ -22,6 +22,11 @@ SetWorkingDir, %A_ScriptDir%
 Return
 
 ;Always
+    f17::Browser_Refresh
+    F18::Browser_Forward
+    F19::Browser_Back
+    F21::^c
+    F20::^v
 
 ;changeresolution
     +^F12::
@@ -186,6 +191,14 @@ Return
     Send, [SerializeField]
     return
 Return
+
+;SuperHot
+    #IfWinActive ahk_exe SH.exe
+    f20::Esc
+    F17::e
+    F18::r
+    F19::r
+    
 
 ;ExitFunc
     ExitFunc(ExitReason, ExitCode)

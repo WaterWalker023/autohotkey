@@ -22,6 +22,8 @@ return
 
 close:
 TV_GetText(selectedgame, TV_GetSelection())
+Gui,  submit
+Gui, destroy
 Loop Files, D:\ROM\*, R
 {
     StringReplace, games, A_LoopFileName, .%A_LoopFileExt%, , All
@@ -32,8 +34,6 @@ Loop Files, D:\ROM\*, R
     }
 }
 GuiControlGet, FocusedControl, FocusV
-Gui,  submit
-Gui, destroy
 ExitApp
 Return
 

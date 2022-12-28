@@ -11,6 +11,7 @@ Loop{
     sleep 1000
     IfWinExist, ahk_exe Project64.exe
     {
+
         IfWinNotExist project64.ahk
             Run, C:\Users\Tomst\OneDrive - Mediacollege Amsterdam\Bureaublad\ahk\project64.ahk
     }
