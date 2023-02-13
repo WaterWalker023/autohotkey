@@ -1,0 +1,37 @@
+#SingleInstance, Force
+SendMode Input
+SetWorkingDir, %A_ScriptDir%
+
+Joy1::send 1
+joy2::send 2
+Joy3::send 3
+joy4::send 4
+joy5::send 5
+joy6::send 6
+joy7::send 7
+joy8::send 8
+joy9::send 9
+joy10::send 10
+joy11::send 11
+joy12::send 12
+joy13::send 13
+joy14::send 14
+joy15::send 15
+joy16::send 16
+joy17::send 17
+joy18::send 18
+joy19::send 19
+joy20::send 20
+joy21::send 21
+joy22::send 22
+joy23::send 23
+joy24::send 24
+joy25::send 25
+joy26::send 26
+joy27::send 27
+joy28::send 28
+joy29::send 29
+joy30::send 30
+joy31::send 31
+joy32::send 32
+n
