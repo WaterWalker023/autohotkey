@@ -57,6 +57,18 @@ else if macro = j ; highlight mouse posison
 { 
     send #!p
 }
+else if macro = delete ; play unity
+{ 
+    send ^p
+}
+else if macro = end ; pause unity
+{ 
+    send ^!p
+}
+else if macro = pagedown ; build unity
+{
+    send ^b
+}
 else if macro = up
 { 
     ;SoundSet, 0,,, 12
@@ -88,9 +100,9 @@ else if macro = o ; make note
 }
 Else if macro = d ; open powershell
 {
-    SetWorkingDir C:\Users\tomst
-    run C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
-    SetWorkingDir, %A_ScriptDir%
+    WinGet, powershellopenprogramworking, ProcessPath , % "ahk_id" winActive("A")
+    SplitPath, powershellopenprogramworking,, powershellopenprogramworkingdir
+    run C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe, %powershellopenprogramworkingdir%
 }
 Else if macro = f ; open firefox
 {
