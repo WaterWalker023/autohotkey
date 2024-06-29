@@ -1,0 +1,9 @@
+send
+
+100
+
+A_%Clipboard%
+
+test
+
+hoi

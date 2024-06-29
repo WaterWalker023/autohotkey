@@ -1,0 +1,4 @@
+toggleapp
+
+C:\Users\tomst\Desktop\AHK\shutdownafter.ahk
+C:\Users\tomst\Desktop\AHK\shutdownafter.ahk

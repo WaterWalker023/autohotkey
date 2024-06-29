@@ -1,0 +1,3 @@
+run
+
+C:\Users\tomst\AppData\Local\Programs\Microsoft VS Code\Code.exe C:\Users\tomst\Desktop\AHK\macrokeyboardv3\macrokeyboard.ahk

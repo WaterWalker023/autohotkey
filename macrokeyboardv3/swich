@@ -1,0 +1,130 @@
+If (usedkeyboard == 1)
+    {
+        Switch macro
+        {
+        Case "r": ; reload app                                          image
+            while WinExist("ahk_exe LuaMacros.exe"){
+                WinClose ahk_exe LuaMacros.exe
+            }
+            Reload
+        Case "alt": ; remove tooltip                                    image
+            ToolTip,
+            SoundPlay, Nonexistent.mp3
+        Case "Space": ; play music
+            IfWinNotExist, C:\Users\tomst\Desktop\AHK\sounds\musicplayer.ahk
+            {
+                Run, autohotkey.exe C:\Users\tomst\Desktop\AHK\sounds\musicplayer.ahk C:\Users\tomst\Desktop\AHK\sounds\playlist\
+            }
+
+            IfWinExist, C:\Users\tomst\Desktop\AHK\sounds\musicplayer.ahk
+            {
+                WinClose C:\Users\tomst\Desktop\AHK\sounds\musicplayer.ahk
+            }
+        Case "Secondalt": ; skip nummer
+            Run, C:\Users\tomst\Desktop\AHK\sounds\bettersoundplay.ahk
+        Case "l": ; always on top                                       image
+            send #^t
+        Case "k": ; color picker                                        image
+            send #+c
+        Case "m": ; highlight mouse clicks                              image
+            send #+h
+        Case "n": ; Text Extractor                                      image
+            send #+t
+        Case "comma": ; toggle disc mic & cam                           image
+            send +#o
+            Sleep, 200
+            send ^!-
+        case "singlequote": ; start stream                              image
+            send ^!+{f13}
+        Case "semicolon": ; deafen dicord                               image
+            send #^;
+        Case "period": ; toggle disc mic                                image
+            send ^!-
+        Case "slash": ; toggle cam                                      image
+            send +#o
+        Case "j": ; highlight mouse posison                             image
+            send #!p
+        Case "delete": ; play unity                                     image
+            send ^p
+        Case "end": ; pause unity                                       image
+            send ^!p
+        Case "pagedown": ; build unity                                  image
+            send ^b
+        Case "pageup": ; show calender                                  image
+            send #!d
+        Case "b": ; type tomsteijger@hotmail.com                        image
+            send tomsteijger@hotmail.com
+        Case "c": ; dupe item                                           image
+            send ^c
+            send, {Right}
+            send ^v
+        Case "y": ; open macroboard script                              image
+            run C:\Users\tomst\AppData\Local\Programs\Microsoft VS Code\Code.exe C:\Users\tomst\Desktop\AHK\macrokeyboardv3\macrokeyboard.ahk
+        Case "q": ; make note                                           image
+            run D:\shared files\notes\notes.xlsx
+        case "tilde": ; open fancy zones editor                         image
+            send #+!{f12}
+        Case "v": ; send plain text                                     image
+            send %Clipboard%
+        Case "g": ; HDR toggle
+            send #!b
+        Case "leftbracket": ; crop and lock thumpnail
+            send #^+t
+        Case "rightbracket": ; crop and lock reparent
+            send #^+r
+        case "up": ; zoom in magnify                                    image
+            Send, #{+}
+        case "down": ; zoom uit magnify                                 image
+            send #-
+        case "left": ; close magnify                                    image
+            send #{Esc}
+        case "Right": ; open magnify                                    image
+            run Magnify.exe
+        case "f1": ; open ahk help
+            run "C:\Program Files\AutoHotkey\AutoHotkey.exe"
+        case "f5": ; restart
+            ToolTip, confirm restart
+            If (lastkey = macro)
+            {
+                Shutdown, 2
+            }
+        case "f6": ; Shutdown
+            ToolTip, confirm Shutdown
+            If (lastkey = macro)
+            {
+                Shutdown, 1
+            }
+        Case "f7": ; shutdowntimer
+            IfWinNotExist, C:\Users\tomst\Desktop\AHK\shutdownafter.ahk
+            {
+                Run, C:\Users\tomst\Desktop\AHK\shutdownafter.ahk
+            }
+
+            IfWinExist, C:\Users\tomst\Desktop\AHK\shutdownafter.ahk
+            {
+                WinClose C:\Users\tomst\Desktop\AHK\shutdownafter.ahk
+            }
+        case "f12": ; next wallpaper                                    image
+            send ^+!{f12}
+        case "a": ; open steam                                          image
+            run C:\Program Files (x86)\Steam\steam.exe
+        Case "d": ; open powershell                                     image
+            run C:\Windows\System32\cmd.exe
+        Case "f": ; open firefox                                        image
+            IfWinActive, ahk_exe firefox.exe,
+                send ^t
+            IfWinNotActive, ahk_exe firefox.exe,
+                send #5
+        case "e": ; start LGHUB                                         image
+            run C:\Program Files\LGHUB\lghub.exe
+        case "w": ; start discord                                       image
+            run C:\Users\tomst\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Discord Inc\Discord
+        case "t": ; open googe translate                                image
+            run https://translate.google.com/?sl=auto&tl=en
+        case "s": ; open NCGL                                           image
+            run C:\Users\tomst\NCGL\NCGL.exe
+        Default:
+            ToolTip, %macro% on keyboard %usedkeyboard% is not used
+
+        }
+    }

@@ -1,0 +1,4 @@
+shutdown
+
+1
+confirm shutdown

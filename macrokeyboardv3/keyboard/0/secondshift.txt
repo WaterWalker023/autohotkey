@@ -1,0 +1,3 @@
+run
+
+Autohotkey.exe C:\Users\tomst\Desktop\AHK\sounds\bettersoundplay.ahk "C:\Users\tomst\Desktop\AHK\sounds\playlist\the kraken.mp3" 1,,Hide`

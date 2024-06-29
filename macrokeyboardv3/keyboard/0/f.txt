@@ -1,0 +1,5 @@
+runappontaskbar
+
+firefox
+^t
+5

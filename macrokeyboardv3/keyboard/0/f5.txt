@@ -1,0 +1,4 @@
+shutdown
+
+2
+confirm restart

@@ -1,0 +1,3 @@
+run
+
+C:\Program Files\LGHUB\lghub.exe

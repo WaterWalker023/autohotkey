@@ -1,0 +1,4 @@
+toggleapp
+
+C:\Users\tomst\Desktop\AHK\sounds\musicplayer.ahk
+autohotkey.exe C:\Users\tomst\Desktop\AHK\sounds\musicplayer.ahk C:\Users\tomst\Desktop\AHK\sounds\epic\
