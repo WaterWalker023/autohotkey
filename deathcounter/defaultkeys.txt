@@ -1,0 +1,7 @@
+key to up the deathcounter with one:
+Numpad0
+key to reset the counter:
+0
+
+list of keys you can use:
+https://www.autohotkey.com/docs/v1/KeyList.htm

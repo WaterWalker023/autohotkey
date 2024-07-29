@@ -8,12 +8,12 @@ niks := ""
 giveerror = 1
 
 showexe = %2%
-showexe = 1
 
 If (showexe = 1)
 {
     Gui, Show, NA
 }
+
 
 SetTimer, noerror, 100
 
