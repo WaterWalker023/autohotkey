@@ -1,1 +1,2 @@
 C:\Users\tomst\Desktop\AHK\sounds\playlist\
+C:\Users\tomst\Desktop\AHK\sounds\notinplaylist\

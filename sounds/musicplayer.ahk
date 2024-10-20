@@ -3,6 +3,7 @@ SendMode Input
 SetWorkingDir, %A_ScriptDir%
 randomcounter = 0
 commandparmiter1 = %1%*
+commandparmiter2 = %2%*
 menuisopen = 0
 secondenter = 0
 null := ""
@@ -15,6 +16,11 @@ If (commandparmiter1 == "*")
 {
     FileReadLine, Default, Default.txt, 1
     commandparmiter1 = %Default%*
+}
+If (commandparmiter2 == "*")
+{
+    FileReadLine, Default2, Default.txt, 2
+    commandparmiter2 = %Default2%*
 }
 
 playplaylist(commandparmiter1, 0)
@@ -40,9 +46,9 @@ tooltipupdate:
         }
 
     }
-
+    
     groupmessage = 0
-    loop Files, C:\Users\tomst\Desktop\AHK\sounds\notinplaylist\*
+    loop Files, %commandparmiter2%
     {
         If (A_LoopFileName != "desktop.ini")
         {
@@ -63,7 +69,7 @@ tooltipupdate:
     ToolTip,%listofnummers%, -1000000, -100000 ,1
 return
 
-findandplaymusic(musicinput, commandparmiter1)
+findandplaymusic(musicinput, commandparmiter1, commandparmiter2)
 {
     loop Files, %commandparmiter1%
     {
@@ -77,7 +83,7 @@ findandplaymusic(musicinput, commandparmiter1)
             }
         }
     }
-    loop Files, C:\Users\tomst\Desktop\AHK\sounds\notinplaylist\*
+    loop Files, %commandparmiter2%
     {
         If (A_LoopFileName != "desktop.ini")
         {
@@ -135,8 +141,8 @@ ExitFunc(ExitReason, ExitCode)
 }
 
 mulittimer:
-SetTimer, mulittimer , Delete 
-findandplaymusic(currendstring, commandparmiter1)
+    SetTimer, mulittimer , Delete
+    findandplaymusic(currendstring, commandparmiter1, commandparmiter2)
 Return
 
 #If, menuisopen = 0
@@ -174,6 +180,16 @@ Return
     y::
     z::
     -::
+    1::
+    2::
+    3::
+    4::
+    5::
+    6::
+    7::
+    8::
+    9::
+    0::
         currendstring = %currendstring%%A_ThisHotkey%
     Return
 
@@ -202,7 +218,6 @@ Return
         tooltip ,,,1
         SetTimer, mulittimer, 100
     Return
-
 
     /*
     #SingleInstance, Force
